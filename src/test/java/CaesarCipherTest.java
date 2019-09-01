@@ -54,7 +54,7 @@ public class CaesarCipherTest {
     @Test
     public void decode_reverseEncode_String(){
         CaesarCipher testCaesarCipher = new CaesarCipher("Gsbol b", 1);
-        assertEquals("Frank", testCaesarCipher.decode());
+        assertEquals("Frank a", testCaesarCipher.decode());
     }
 
 
