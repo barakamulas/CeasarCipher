@@ -17,13 +17,6 @@ public class CaesarCipher {
         return key;
     }
 
-
-
-
-
-
-
-
     public String encode() {
 
         String resultText = "";
@@ -62,15 +55,16 @@ public class CaesarCipher {
 
                 resultText += letter;
             }
-
-
         }
-
-
-
 
 
         return resultText;
     }
+
+    public String decode(){
+        return "sss";
+    }
+
+
 
 }
