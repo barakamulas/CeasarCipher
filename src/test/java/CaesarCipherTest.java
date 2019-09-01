@@ -28,10 +28,18 @@ public class CaesarCipherTest {
     }
 
     @Test
-    public void encode_encodeASingleLetterWithAWithinBoundsNegativeShift_y(){
+    public void encode_encodeASingleLetterWithAWithinBoundsNegativeShift_b(){
         CaesarCipher testCaesarCipher = new CaesarCipher("a",-25);
         assertEquals("b", testCaesarCipher.encode());
     }
+
+    @Test
+    public void encode_encodesUpperCaseToUpperCaseAndLowerCaseToLowerCase_B(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("A",-25);
+        assertEquals("B", testCaesarCipher.encode());
+    }
+
+
 
 
 
