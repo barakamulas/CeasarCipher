@@ -39,6 +39,12 @@ public class CaesarCipherTest {
         assertEquals("B", testCaesarCipher.encode());
     }
 
+    @Test
+    public void encode_doesNotEncodeSymbolsAndPeriods_Space(){
+        CaesarCipher testCaesarCipher = new CaesarCipher(" ",-25);
+        assertEquals(" ", testCaesarCipher.encode());
+    }
+
 
 
 
