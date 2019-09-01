@@ -45,6 +45,15 @@ public class CaesarCipher {
             }
 
         }
+        else if (Character.isUpperCase(letter)){
+            char c = (char) + (letter + key);
+            if (c >'Z'){
+                resultText += (char)(letter -(26 - key));
+            }
+            else {
+                resultText += c;
+            }
+        }
 
         return resultText;
     }
