@@ -27,6 +27,12 @@ public class CaesarCipherTest {
         assertEquals("a", testCaesarCipher.encode());
     }
 
+    @Test
+    public void encode_encodeASingleLetterWithAWithinBoundsNegativeShift_y(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("a",-25);
+        assertEquals("b", testCaesarCipher.encode());
+    }
+
 
 
 }
