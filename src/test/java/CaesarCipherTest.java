@@ -21,6 +21,12 @@ public class CaesarCipherTest {
         assertEquals("b", testCaesarCipher.encode());
     }
 
+    @Test
+    public void encode_encodeASingleLetterWithShiftOutOfBounds_a(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("z",1);
+        assertEquals("a", testCaesarCipher.encode());
+    }
+
 
 
 }

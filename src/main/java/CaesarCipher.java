@@ -17,21 +17,18 @@ public class CaesarCipher {
         return key;
     }
 
-    public String encode(){
+    public String encode() {
 
         String resultText = "";
         int shift = key % 26;
         char letter = text.charAt(0);
-        char c = (char)(letter + shift);
-
-        resultText += c;
-
+        char c = (char) (letter + shift);
+        if (c > 'z') {
+            resultText += (char) (letter - (26 - shift));
+        } else {
+            resultText += c;
+        }
         return resultText;
     }
-
-
-
-
-
 
 }
