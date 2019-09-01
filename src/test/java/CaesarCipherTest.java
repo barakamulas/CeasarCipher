@@ -14,12 +14,12 @@ public class CaesarCipherTest {
         CaesarCipher testCaesarCipher = new CaesarCipher("a",1);
         assertEquals(true, testCaesarCipher.getKey() instanceof Integer);
     }
-//
-//    @Test
-//    public void encode_encodeASingleLetterWithShiftWithinBounds_b(){
-//        CaesarCipher testCaesarCipher = new CaesarCipher("a",1);
-//        assertEquals("b", testCaesarCipher.encode());
-//    }
+
+    @Test
+    public void encode_encodeASingleLetterWithShiftWithinBounds_b(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("a",1);
+        assertEquals("b", testCaesarCipher.encode());
+    }
 
 
 
