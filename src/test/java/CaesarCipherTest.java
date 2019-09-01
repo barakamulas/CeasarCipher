@@ -9,11 +9,11 @@ public class CaesarCipherTest {
         assertEquals(true, testCaesarCipher.getText() instanceof String);
     }
 
-//    @Test
-//    public void key_keyIsInteger(){
-//        CaesarCipher testCaesarCipher = new CaesarCipher("a",1);
-//        assertEquals(true, testCaesarCipher.getKey() instanceof Integer);
-//    }
+    @Test
+    public void key_keyIsInteger(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("a",1);
+        assertEquals(true, testCaesarCipher.getKey() instanceof Integer);
+    }
 //
 //    @Test
 //    public void encode_encodeASingleLetterWithShiftWithinBounds_b(){
