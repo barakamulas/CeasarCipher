@@ -45,6 +45,12 @@ public class CaesarCipherTest {
         assertEquals(" ", testCaesarCipher.encode());
     }
 
+    @Test
+    public void encode_multiCharacterString_String(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("Frank a",1);
+        assertEquals("Gsbol b", testCaesarCipher.encode());
+    }
+
 
 
 
