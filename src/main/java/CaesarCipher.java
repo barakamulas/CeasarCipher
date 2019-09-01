@@ -20,11 +20,20 @@ public class CaesarCipher {
     public String encode() {
 
         String resultText = "";
-        int shift = key % 26;
+
+
+
+        if (key > 26){
+            key = key % 26;
+        }
+        else if (key < 0){
+            key = (key%26)+26;
+        }
+
         char letter = text.charAt(0);
-        char c = (char) (letter + shift);
+        char c = (char) (letter + key);
         if (c > 'z') {
-            resultText += (char) (letter - (26 - shift));
+            resultText += (char) (letter - (26 - key));
         } else {
             resultText += c;
         }
