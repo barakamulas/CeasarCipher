@@ -1,6 +1,5 @@
 public class CaesarCipher {
 
-
     private String text;
     private Integer key;
 
@@ -20,26 +19,24 @@ public class CaesarCipher {
     public String encode() {
 
         String resultText = "";
-
         if (key > 26) {
             key = key % 26;
-        } else if (key < 0) {
+        }
+        else if (key < 0) {
             key = (key % 26) + 26;
         }
 
         for(int i = 0; i < text.length(); i++){
             char letter = text.charAt(i);
-
             if (Character.isLetter(letter)){
-
                 if (Character.isLowerCase(letter)) {
                     char c = (char) (letter + key);
                     if (c > 'z') {
                         resultText += (char) (letter - (26 - key));
-                    } else {
+                    }
+                    else {
                         resultText += c;
                     }
-
                 }
                 else if (Character.isUpperCase(letter)){
                     char c = (char) + (letter + key);
@@ -50,64 +47,49 @@ public class CaesarCipher {
                         resultText += c;
                     }
                 }
-
-            }else {
-
+            }
+            else {
                 resultText += letter;
             }
         }
-
-
         return resultText;
     }
 
     public String decode(){
-
-
-            String resultText = "";
-
-            if (key > 26) {
-                key = key % 26;
-            } else if (key < 0) {
-                key = (key % 26) + 26;
-            }
-
-            for(int i = 0; i < text.length(); i++){
-                char letter = text.charAt(i);
-
-                if (Character.isLetter(letter)){
-
-                    if (Character.isLowerCase(letter)) {
-                        char c = (char) (letter - key);
-                        if (c < 'a') {
-                            resultText += (char) (letter + (26 - key));
-                        } else {
-                            resultText += c;
-                        }
-
+        String resultText = "";
+        if (key > 26) {
+            key = key % 26;
+        }
+        else if (key < 0) {
+            key = (key % 26) + 26;
+        }
+        for(int i = 0; i < text.length(); i++){
+            char letter = text.charAt(i);
+            if (Character.isLetter(letter)){
+                if (Character.isLowerCase(letter)) {
+                    char c = (char) (letter - key);
+                    if (c < 'a') {
+                        resultText += (char) (letter + (26 - key));
                     }
-                    else if (Character.isUpperCase(letter)){
-                        char c = (char) + (letter - key);
-                        if (c <'A'){
-                            resultText += (char)(letter +(26 - key));
-                        }
-                        else {
-                            resultText += c;
-                        }
+                    else {
+                        resultText += c;
                     }
-
-                }else {
-
-                    resultText += letter;
+                }
+                else if (Character.isUpperCase(letter)){
+                    char c = (char) + (letter - key);
+                    if (c <'A'){
+                        resultText += (char)(letter +(26 - key));
+                    }
+                    else {
+                        resultText += c;
+                    }
                 }
             }
+            else {
 
-
-            return resultText;
-
-
+                resultText += letter;
+            }
+        }
+        return resultText;
     }
-
-
-
 }
