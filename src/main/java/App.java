@@ -6,10 +6,10 @@ public class App {
     public static void main(String[] args) {
         boolean runApp = true;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("I'm a Caesar Cipher and Decipher application!");
+        System.out.println("I'm a Caesar Cipher application!");
         try {
             while(runApp){
-                System.out.println("What would you like to do: 1. Encode 2. Decode 3. Exit (Enter 1, 2 or 3");
+                System.out.println("What would you like to do: 1. Encode 2. Decode 3. Exit (Enter 1, 2 or 3)");
                 String userChoice = bufferedReader.readLine();
                 Integer intUserChoice = Integer.parseInt(userChoice);
                 if(intUserChoice == 1){
