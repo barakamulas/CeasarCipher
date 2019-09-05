@@ -4,57 +4,57 @@ import org.junit.*;
 public class CaesarCipherTest {
 
     @Test
-    public void text_textIsString(){
+    public void test_instanceOfClassCaesarCipher_true(){
         CaesarCipher testCaesarCipher = new CaesarCipher("a",1);
-        assertEquals(true, testCaesarCipher.getText() instanceof String);
+        assertEquals(true, testCaesarCipher instanceof CaesarCipher);
     }
 
     @Test
-    public void key_keyIsInteger(){
+    public void encode_encodeASingleLetterWithRightShiftWithinBounds_b(){
         CaesarCipher testCaesarCipher = new CaesarCipher("a",1);
-        assertEquals(true, testCaesarCipher.getKey() instanceof Integer);
+        assertEquals("b", testCaesarCipher.getCipherText());
     }
 
     @Test
-    public void encode_encodeASingleLetterWithShiftWithinBounds_b(){
-        CaesarCipher testCaesarCipher = new CaesarCipher("a",1);
-        assertEquals("b", testCaesarCipher.encode());
-    }
-
-    @Test
-    public void encode_encodeASingleLetterWithShiftOutOfBounds_a(){
+    public void encode_encodeASingleLetterWithRightShiftOutOfBounds_a(){
         CaesarCipher testCaesarCipher = new CaesarCipher("z",1);
-        assertEquals("a", testCaesarCipher.encode());
+        assertEquals("a", testCaesarCipher.getCipherText());
     }
 
     @Test
-    public void encode_encodeASingleLetterWithAWithinBoundsNegativeShift_b(){
-        CaesarCipher testCaesarCipher = new CaesarCipher("a",-25);
-        assertEquals("b", testCaesarCipher.encode());
+    public void encode_encodeASingleLetterWithALeftShiftWithinBounds_b(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("d",-2);
+        assertEquals("b", testCaesarCipher.getCipherText());
+    }
+
+    @Test
+    public void encode_encodeASingleLetterWithALeftShiftOutOfBounds_b(){
+        CaesarCipher testCaesarCipher = new CaesarCipher("a",-27);
+        assertEquals("z", testCaesarCipher.getCipherText());
     }
 
     @Test
     public void encode_encodesUpperCaseToUpperCaseAndLowerCaseToLowerCase_B(){
         CaesarCipher testCaesarCipher = new CaesarCipher("A",-25);
-        assertEquals("B", testCaesarCipher.encode());
+        assertEquals("B", testCaesarCipher.getCipherText());
     }
 
     @Test
     public void encode_doesNotEncodeSymbolsAndPeriods_Space(){
         CaesarCipher testCaesarCipher = new CaesarCipher(" ",-25);
-        assertEquals(" ", testCaesarCipher.encode());
+        assertEquals(" ", testCaesarCipher.getCipherText());
     }
 
     @Test
     public void encode_multiCharacterString_String(){
         CaesarCipher testCaesarCipher = new CaesarCipher("Frank a",1);
-        assertEquals("Gsbol b", testCaesarCipher.encode());
+        assertEquals("Gsbol b", testCaesarCipher.getCipherText());
     }
 
     @Test
     public void decode_reverseEncode_String(){
         CaesarCipher testCaesarCipher = new CaesarCipher("Gsbol b", 1);
-        assertEquals("Frank a", testCaesarCipher.decode());
+        assertEquals("Frank a", testCaesarCipher.getPlainText());
     }
 
 

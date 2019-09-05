@@ -2,10 +2,15 @@ public class CaesarCipher {
 
     private String text;
     private Integer key;
+    private String cipherText;
+    private String plainText;
 
-    public CaesarCipher(String text,Integer key){
+
+    public CaesarCipher(String text, Integer key){
         this.key = key;
         this.text = text;
+        this.cipherText = encode();
+        this.plainText = decode();
     }
 
     public String getText() {
@@ -15,6 +20,10 @@ public class CaesarCipher {
     public Integer getKey() {
         return key;
     }
+
+    public String getCipherText(){ return cipherText;}
+
+    public String getPlainText(){ return plainText;}
 
     public String encode() {
 
